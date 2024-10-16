@@ -1,5 +1,0 @@
-httpx
-uvicorn
-fastapi
-langfuse
-google-cloud-speech
