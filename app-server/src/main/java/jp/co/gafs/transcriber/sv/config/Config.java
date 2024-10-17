@@ -14,6 +14,7 @@ public class Config {
     static String audioFileSuffix;
     static String transcriptionFileSuffix;
     static String summaryFileSuffix;
+    static int ioBufferSize;
 
     public void init() {
         final char separator = File.pathSeparatorChar;
@@ -26,6 +27,7 @@ public class Config {
         audioFileSuffix = System.getenv().getOrDefault("AUDIO_FILE_SUFFIX", "_audio");
         transcriptionFileSuffix = System.getenv().getOrDefault("TRANSCRIPTION_FILE_SUFFIX", "_transcription");
         summaryFileSuffix = System.getenv().getOrDefault("SUMMARY_FILE_SUFFIX", "_summary");
+        ioBufferSize = Integer.parseInt(System.getenv().getOrDefault("IO_BUFFER_SIZE", "128"));
     }
         
     public static String getBaseFolderPath() {
@@ -62,5 +64,9 @@ public class Config {
 
     public static String getSummaryFileSuffix() {
         return summaryFileSuffix;
+    }
+
+    public static int getIoBufferSize() {
+        return ioBufferSize;
     }
 }
